@@ -10,7 +10,7 @@
                 
                 <?php foreach ($articles as $article): ?>
                 
-                    <article class="post hvost">
+                    <article class="post">
                         <div class="post-thumb">
                             <a href="<?= Url::toRoute(['site/view','id' => $article->id])?>"><img src="<?=$article->getImage()?>" alt=""></a>
 

@@ -1,7 +1,7 @@
 <!--main content start-->
 <?php
     use yii\widgets\LinkPager;
-    use yii\helpers\Url ;  
+    use yii\helpers\Url;  
 ?>
 <div class="main-content">
     <div class="container">
@@ -10,7 +10,7 @@
                 
                 <?php foreach ($articles as $article): ?>
                 
-                    <article class="post">
+                    <article class="post hvost">
                         <div class="post-thumb">
                             <a href="<?= Url::toRoute(['site/view','id' => $article->id])?>"><img src="<?=$article->getImage()?>" alt=""></a>
 
@@ -21,15 +21,10 @@
                         <div class="post-content">
                             <header class="entry-header text-center text-uppercase">
                                 <h6><a href="<?=Url::toRoute(['site/category','id' => $article->category_id]);?>"> <?=$article->category->title;?></a></h6>
-
                                 <h1 class="entry-title"><a href="<?= Url::toRoute(['site/view','id' => $article->id])?>"><?= $article->title?></a></h1>
-
-
                             </header>
-                            <div class="entry-content">
-                                
-                                <?= $article->content?>
-                                
+                            <div class="entry-content">                            
+                                <?= $article->content?>                       
                                 <div class="btn-continue-reading text-center text-uppercase">
                                     <a href="<?= Url::toRoute(['site/view','id' => $article->id])?>" class="more-link">Continue Reading</a>
                                 </div>
@@ -43,7 +38,7 @@
                         </div>
                     </article>
 
-                <?php endforeach ?>
+                <?php endforeach; ?>
 
                 <?php 
 
@@ -54,7 +49,7 @@
                 ?>
                 
             </div>
-            <div class="col-md-4" data-sticky_column>
+            <div class="col-md-4">
                 <div class="primary-sidebar">
                     
                     <?=

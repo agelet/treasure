@@ -158,7 +158,8 @@ class Article extends \yii\db\ActiveRecord
         return Article::find()->orderBy('viewed desc')->limit($limit)->all();
     }
     
-    /*public function getUrl() {
-        return 
-    }*/
+    public function saveArticle() {
+        $this->user_id = Yii::$app->user->id;
+        return $this->save();
+    }
 }
